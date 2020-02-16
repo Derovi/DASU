@@ -38,7 +38,7 @@ SparseTable<T>::SparseTable(const std::vector<T> &elements) {
   for (uint32_t current_depth = 1; current_depth < depth_; ++current_depth) {
     for (uint32_t index = 0; index < size_; ++index) {
       sparse_[current_depth][index] = std::min(sparse_[current_depth - 1][index],
-                                               sparse_[current_depth - 1][index + (1U << (current_depth - 1U))]);
+          sparse_[current_depth - 1][index + (1U << (current_depth - 1U))]);
     }
   }
 }
